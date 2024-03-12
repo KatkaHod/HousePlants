@@ -48,9 +48,14 @@ public class Plant {
     }
 
 
-    public void setFrequencyOfWatering(int frequencyOfWatering) {
+    public void setFrequencyOfWatering(int frequencyOfWatering) throws PlantException {
+        if (frequencyOfWatering <= 0) {
+            throw new PlantException("Watering frequency cannot be 0 or less. Provided value: " + frequencyOfWatering);
+        }
+
         this.frequencyOfWatering = frequencyOfWatering;
     }
+
     public int getFrequencyOfWatering() {
         return frequencyOfWatering;
     }
