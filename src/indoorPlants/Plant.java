@@ -46,10 +46,18 @@ public class Plant {
         return watering;
     }
 
+
+   //calculation of next day watering of plant
+    public void NextDayOfPlantWatering() {
+        LocalDate newDateWateringOfPlant = watering.plusDays(frequencyOfWatering);
+    }
+
+
     //watering date + recommended day of next watering (how many days)
     public LocalDate getNextWateringDate() {
         return watering.plusDays(frequencyOfWatering);
     }
+
 
    //created method which return name of plant, last date of watering and next date of recommend watering.
     public String getWateringInfo() {
