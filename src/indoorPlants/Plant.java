@@ -1,3 +1,5 @@
+package indoorPlants;
+
 import java.time.LocalDate;
 
 public class Plant {
