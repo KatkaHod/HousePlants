@@ -7,6 +7,7 @@ public class Plant {
     private String notes;
     private LocalDate planted; //planting date of the plant
     private LocalDate watering; //Watering day of the plant
+
     private int frequencyOfWatering;
 
     //first constructor
@@ -47,9 +48,11 @@ public class Plant {
     }
 
 
-   //calculation of next day watering of plant
-    public void NextDayOfPlantWatering() {
-        LocalDate newDateWateringOfPlant = watering.plusDays(frequencyOfWatering);
+    public void setFrequencyOfWatering(int frequencyOfWatering) {
+        this.frequencyOfWatering = frequencyOfWatering;
+    }
+    public int getFrequencyOfWatering() {
+        return frequencyOfWatering;
     }
 
 
