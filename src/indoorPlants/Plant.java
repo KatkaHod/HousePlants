@@ -48,21 +48,22 @@ public class Plant {
     }
 
 
-    public void setFrequencyOfWatering(int frequencyOfWatering) throws PlantException {
-        if (frequencyOfWatering <= 0) {
-            throw new PlantException("Watering frequency cannot be 0 or less. Provided value: " + frequencyOfWatering);
-        }
-
+    public void setFrequencyOfWatering(int frequencyOfWatering)  {
         this.frequencyOfWatering = frequencyOfWatering;
     }
 
-    public int getFrequencyOfWatering() {
+    public int getFrequencyOfWatering() throws PlantException {
+
+        if (frequencyOfWatering <= 0) {
+            throw new PlantException("Watering frequency cannot be 0 or less. Provided value: " + frequencyOfWatering);
+        }
         return frequencyOfWatering;
     }
 
 
     //next watering date, based on the frequency of watering.
     public LocalDate getNextWateringDate() throws PlantException {
+
         if (watering.isBefore(planted)) {
             throw new PlantException("The last day of watering must not be older than the plant was planted. Provided date of watering: " + watering);
         }
@@ -70,11 +71,18 @@ public class Plant {
     }
 
 
-   //created method which return name of plant, last date of watering and next date of recommend watering.
-    public String getWateringInfo() {
+    public String getWateringInfo() throws PlantException {
+
+        //capture values and provide default values for null
+        String name = getName() != null ? getName() : "null name provided";
+        String wateringDate = getWatering() != null ? getWatering().toString() : "No watering date provided";
+        String notes = getNotes() != null ? getNotes() : "";
+
         return "Name of plant: " + getName() + "\n"
                 + "Date of the last watering: " + getWatering().toString() + "\n"
-                + "Date of recommended next watering of plant: " + getNextWateringDate().toString();
+                + "Frequency of watering: " + getFrequencyOfWatering() + "\n"
+                + "Date of recommended next watering of plant: " + getNextWateringDate().toString() + "\n"
+                + "Notes: " + getNotes();
     }
 
 }
