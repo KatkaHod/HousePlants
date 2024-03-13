@@ -61,8 +61,11 @@ public class Plant {
     }
 
 
-    //watering date + recommended day of next watering (how many days)
-    public LocalDate getNextWateringDate() {
+    //next watering date, based on the frequency of watering.
+    public LocalDate getNextWateringDate() throws PlantException {
+        if (watering.isBefore(planted)) {
+            throw new PlantException("The last day of watering must not be older than the plant was planted. Provided date of watering: " + watering);
+        }
         return watering.plusDays(frequencyOfWatering);
     }
 
