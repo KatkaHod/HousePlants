@@ -2,7 +2,7 @@ package indoorPlants;
 
 import java.lang.Exception;
 
-//own class of exceptions
+//checked exception
 
 public class PlantException extends Exception {
 
