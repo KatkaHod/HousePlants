@@ -3,11 +3,11 @@ package indoorPlants;
 import java.time.LocalDate;
 
 public class Plant {
+
     private String name;
     private String notes;
     private LocalDate planted; //planting date of the plant
     private LocalDate watering; //Watering day of the plant
-
     private int frequencyOfWatering;
 
     //first constructor

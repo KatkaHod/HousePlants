@@ -10,6 +10,7 @@ import java.time.format.DateTimeParseException;
 
 public class ListOfPlants {
 
+    //Attribute list of 'Plant'
     private List<Plant> plantsList = new ArrayList<>();
 
 
@@ -53,19 +54,32 @@ public class ListOfPlants {
 
 
 
+    //save content to txt. file
+    public void saveContentToFile(String fileName) throws PlantException {
+        String delimiter = Settings.getDelimiter();
+        try (PrintWriter writer = new PrintWriter(new BufferedWriter(new FileWriter(fileName)))) {
+
+            //Scrolls through the plant list and makes an entry in the file for each plant in the list.
+            for (Plant plant : plantsList) {
+                //Writes data about one plant on one line of the file. The individual data are separated by a separator. For example tab - \t or ; or :
+                writer.println(plant.getName() + delimiter
+                        + plant.getNotes() + delimiter
+                        + plant.getPlanted() + delimiter
+                        + plant.getWatering() + delimiter
+                        + plant.getFrequencyOfWatering() + delimiter);
+            }
+        } catch (FileNotFoundException e) {
+            throw new PlantException("File "+fileName+" not found!\n" + e.getLocalizedMessage());
+
+        } catch (IOException e) {
+            throw new PlantException("Output error when writing to file: "+fileName +":\n"+ e.getLocalizedMessage());
+        }
+
+    }
 
 
 
-
-
-
-
-
-
-
-
-
-
+    //==================Other methods=================================================
     //add a plant to the list
     public void addPlant(Plant newPlant) {
         plantsList.add(newPlant);
