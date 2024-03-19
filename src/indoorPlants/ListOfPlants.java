@@ -51,11 +51,12 @@ public class ListOfPlants {
                     + e.getLocalizedMessage());
         }
         catch (DateTimeParseException e) {
-            throw new PlantException("Error reading date on line number: "+lineCounter+":\n"
+            throw new PlantException("Error reading date on line number: "+ lineCounter +":\n"
                     + e.getLocalizedMessage());
         }
 
     }//end of method
+
 
 
 
