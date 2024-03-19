@@ -9,12 +9,15 @@ import java.io.BufferedWriter;
 import java.io.FileNotFoundException;
 import java.util.Scanner;
 import java.io.File;
+import java.time.LocalDate;
+import java.time.format.DateTimeParseException;
 
 
 public class ListOfPlants {
 
     //atribut - provided value - Class Plant
     private List<Plant> plantsList = new ArrayList<>();
+
 
 
     //load from txt. file
@@ -24,32 +27,35 @@ public class ListOfPlants {
 
             while (scanner.hasNextLine()) {
                 String line = scanner.nextLine();
+                //Split the loaded line into parts according to the separator
                 String[] parts = line.split(Settings.getDelimiter());
                 if (parts.length != 5) throw new PlantException("Incorrect count of items on line number:  " + lineCounter + ": "+line+"!");
 
+                //parses the individual parts of the row to the appropriate data types
                 String name = parts[0];
                 String notes = parts[1];
                 int frequencyOfWatering = Integer.parseInt(parts[2]);
+                LocalDate watering = LocalDate.parse(parts[3]);
+                LocalDate planted = LocalDate.parse(parts[4]);
 
+                //Creates a new Plant object with the loaded data and add the created Plant object to the 'plantsList'
+                Plant plant = new Plant(name, notes,planted,watering,frequencyOfWatering);
+                plantsList.add(plant);
+            }//end of method while
 
-
-
-
-
-
-
-
-
-            }
-
-
-
-
+        } catch (FileNotFoundException e) {
+            throw new PlantException("File "+fileName+" not found!\n"+ e.getLocalizedMessage());
+        }
+        catch (NumberFormatException e) {
+            throw new PlantException("Error when reading a numeric value on line number: "+lineCounter+":\n"
+                    + e.getLocalizedMessage());
+        }
+        catch (DateTimeParseException e) {
+            throw new PlantException("Error reading date on line number: "+lineCounter+":\n"
+                    + e.getLocalizedMessage());
         }
 
-
-
-    }
+    }//end of method
 
 
 
@@ -95,31 +101,5 @@ public class ListOfPlants {
     }
 
 
-    
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-}
+}//end of the class
