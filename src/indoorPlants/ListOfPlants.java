@@ -15,9 +15,7 @@ import java.time.format.DateTimeParseException;
 
 public class ListOfPlants {
 
-    //atribut - provided value - Class Plant
     private List<Plant> plantsList = new ArrayList<>();
-
 
 
     //load from txt. file
@@ -41,7 +39,7 @@ public class ListOfPlants {
                 //Creates a new Plant object with the loaded data and add the created Plant object to the 'plantsList'
                 Plant plant = new Plant(name, notes,planted,watering,frequencyOfWatering);
                 plantsList.add(plant);
-            }//end of method while
+            }//end of while
 
         } catch (FileNotFoundException e) {
             throw new PlantException("File "+fileName+" not found!\n"+ e.getLocalizedMessage());
