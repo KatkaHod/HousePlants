@@ -2,16 +2,11 @@ package indoorPlants;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.io.*; //reading from the file
-import java.io.PrintWriter;
-import java.io.BufferedWriter;
-
+import java.io.*;
 import java.io.FileNotFoundException;
 import java.util.Scanner;
-import java.io.File;
 import java.time.LocalDate;
 import java.time.format.DateTimeParseException;
-
 
 public class ListOfPlants {
 
