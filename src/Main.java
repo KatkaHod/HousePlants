@@ -1,16 +1,34 @@
-import java.io.File;
-import java.io.FileNotFoundException;
-import java.io.FileWriter;
-import java.io.PrintWriter;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Scanner;
+import indoorPlants.ListOfPlants;
+import indoorPlants.PlantException;
+import indoorPlants.Settings;
+
+import indoorPlants.ListOfPlants;
+import indoorPlants.ListOfPlants.*;
 
 
 public class Main {
     public static void main(String[] args) {
 
-        final String OUTPUT_FILE = "Resources/kvetiny.txt";
+        String fileName = Settings.getFilename();
+        System.out.println(Settings.getFilename());
+
+
+        //import from the file
+        //ListOfPlants listOfPlants = new ListOfPlants();
+        //try{
+            //listOfPlants.loadContentFromFile(fileName);
+        //} catch (PlantException e) {
+            //System.err.println(
+                    //"error when reading from file: " + Settings.getFilename() + ":\n "
+                            //+ e.getLocalizedMessage()+"\n");
+        //}
+
+        //print the copy of the list
+        //System.out.println("\nList of plants: " + listOfPlants.getPlantsList() + "\n");
+
+
+
+
 
 
 

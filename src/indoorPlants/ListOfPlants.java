@@ -15,7 +15,7 @@ public class ListOfPlants {
 
 
     //load from txt. file
-    public void ReadContentFromFile(String fileName) throws PlantException {
+    public void loadContentFromFile(String fileName) throws PlantException {
         int lineCounter = 0;
         try (Scanner scanner = new Scanner(new BufferedReader(new FileReader(fileName)))) {
 
@@ -53,7 +53,6 @@ public class ListOfPlants {
 
 
 
-
     //save content to txt. file
     public void saveContentToFile(String fileName) throws PlantException {
         String delimiter = Settings.getDelimiter();
@@ -80,6 +79,14 @@ public class ListOfPlants {
 
 
     //==================Other methods=================================================
+
+
+    //return new array list (copy)
+    public List<Plant> getPlantsList() {
+        return new ArrayList<>(plantsList);
+    }
+
+
     //add a plant to the list
     public void addPlant(Plant newPlant) {
         plantsList.add(newPlant);
