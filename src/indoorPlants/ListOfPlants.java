@@ -116,5 +116,10 @@ public class ListOfPlants {
     }
 
 
-
+    @Override
+    public String toString() {
+        return "ListOfPlants{" +
+                "plantsList=" + plantsList +
+                '}';
+    }
 }//end of the class

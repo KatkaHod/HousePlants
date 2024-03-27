@@ -13,18 +13,18 @@ public class Main {
         System.out.println(Settings.getFilename());
 
 
-        //import from the file
-        //ListOfPlants listOfPlants = new ListOfPlants();
-        //try{
-            //listOfPlants.loadContentFromFile(fileName);
-        //} catch (PlantException e) {
-            //System.err.println(
-                    //"error when reading from file: " + Settings.getFilename() + ":\n "
-                            //+ e.getLocalizedMessage()+"\n");
-        //}
+        //load the kvetiny.txt file
+        ListOfPlants listOfPlants = new ListOfPlants();
+        try{
+            listOfPlants.loadContentFromFile(fileName);
+        } catch (PlantException e) {
+            System.err.println(
+                    "error when reading from file: " + Settings.getFilename() + ":\n "
+                            + e.getLocalizedMessage()+"\n");
+        }
 
         //print the copy of the list
-        //System.out.println("\nList of plants: " + listOfPlants.getPlantsList() + "\n");
+        System.out.println("\nList of plants: " + listOfPlants.getPlantsList() + "\n");
 
 
 
