@@ -84,4 +84,14 @@ public class Plant {
                 + "Notes: " + getNotes();
     }
 
+
+    @Override
+    public String toString() {
+        return "Plant{" +
+                "name='" + name + '\'' +
+                ", notes='" + notes + '\'' +
+                ", planted=" + planted +
+                ", watering=" + watering +
+                ", frequencyOfWatering=" + frequencyOfWatering + '}'+"\n";
+    }
 }
