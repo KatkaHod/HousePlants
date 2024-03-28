@@ -26,6 +26,10 @@ public class Main {
         //print the copy of the list
         System.out.println("\nList of plants: " + listOfPlants.getPlantsList() + "\n");
 
+        //add new two plants
+
+
+
 
 
 
