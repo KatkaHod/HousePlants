@@ -11,22 +11,22 @@ public class Plant {
     private int frequencyOfWatering;
 
     //first constructor
-    public Plant(String name, String notes, LocalDate planted, LocalDate watering, int frequencyOfWatering) {
+    public Plant(String name, String notes, int frequencyOfWatering, LocalDate planted, LocalDate watering) {
         this.name = name;
         this.notes = notes;
+        this.frequencyOfWatering = frequencyOfWatering;
         this.planted = planted;
         this.watering = watering;
-        this.frequencyOfWatering = frequencyOfWatering;
     }
 
     //second constructor
-    public Plant(String name, LocalDate planted, int frequencyOfWatering) {
-        this(name, "", planted, LocalDate.now(), frequencyOfWatering);
+    public Plant(String name,int frequencyOfWatering, LocalDate planted) {
+        this(name, "", frequencyOfWatering, planted, LocalDate.now());
     }
 
     //third constructor
     public Plant(String name) {
-        this(name, "", LocalDate.now(), LocalDate.now(), 7);
+        this(name, "",7, LocalDate.now(), LocalDate.now());
     }
 
 

@@ -33,7 +33,7 @@ public class ListOfPlants {
                 LocalDate planted = LocalDate.parse(parts[4]);
 
                 //Creates a new Plant object with the loaded data and add the created Plant object to the 'plantsList'
-                Plant plant = new Plant(name, notes,planted,watering,frequencyOfWatering);
+                Plant plant = new Plant(name, notes,frequencyOfWatering,planted,watering);
                 plantsList.add(plant);
             }//end of while
 
@@ -63,9 +63,9 @@ public class ListOfPlants {
                 //Writes data about one plant on one line of the file. The individual data are separated by a separator. For example tab - \t or ; or :
                 writer.println(plant.getName() + delimiter
                         + plant.getNotes() + delimiter
+                        + plant.getFrequencyOfWatering() + delimiter
                         + plant.getPlanted() + delimiter
-                        + plant.getWatering() + delimiter
-                        + plant.getFrequencyOfWatering() + delimiter);
+                        + plant.getWatering() + delimiter);
             }
         } catch (FileNotFoundException e) {
             throw new PlantException("File "+fileName+" not found!\n" + e.getLocalizedMessage());
