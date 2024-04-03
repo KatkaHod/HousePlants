@@ -3,7 +3,8 @@ import indoorPlants.*;
 import java.time.LocalDate;
 import java.util.Comparator;
 import java.util.Collections;
-
+import java.util.List;
+import java.util.ArrayList;
 import indoorPlants.ListOfPlants;
 
 public class Main {
@@ -73,10 +74,21 @@ public class Main {
 
 
 
-        /* --list sorting of plants--
+        /* --sorting of plants--
          the sort() method in the Collections class is used to sort the items in the collection.
          -> Collections.sort
         */
+
+        //get list of plants from kvetinyOutput
+        List<Plant> plantsList = kvetinyOutput.getPlantsList();
+
+        //sort the list of plants by name
+        Collections.sort(plantsList, Comparator.comparing(Plant::getName));
+
+        System.out.println("\n list of plants sorted by name: " + plantsList + "\n");
+
+
+
 
 
 
