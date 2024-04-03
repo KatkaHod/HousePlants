@@ -1,6 +1,9 @@
 import indoorPlants.*;
 
 import java.time.LocalDate;
+import java.util.Comparator;
+import java.util.Collections;
+
 import indoorPlants.ListOfPlants;
 
 public class Main {
@@ -67,6 +70,14 @@ public class Main {
         }
 
         System.out.println("\n List of plants output: " + kvetinyOutput.getPlantsList() + "\n");
+
+
+
+        /* --list sorting of plants--
+         the sort() method in the Collections class is used to sort the items in the collection.
+         -> Collections.sort
+        */
+
 
 
 
