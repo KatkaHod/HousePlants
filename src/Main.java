@@ -4,7 +4,6 @@ import java.time.LocalDate;
 import java.util.Comparator;
 import java.util.Collections;
 import java.util.List;
-import java.util.ArrayList;
 import indoorPlants.ListOfPlants;
 
 public class Main {
@@ -84,14 +83,11 @@ public class Main {
 
         //sort the list of plants by name
         Collections.sort(plantsList, Comparator.comparing(Plant::getName));
-
         System.out.println("\n list of plants sorted by name: " + plantsList + "\n");
 
-
-
-
-
-
+        //sort the list of plants by day of watering
+        Collections.sort(plantsList, Comparator.comparing(Plant::getWatering));
+        System.out.println("\n list of plants sorted by the last day of watering: " + plantsList + "\n");
 
 
     }
