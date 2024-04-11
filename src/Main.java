@@ -78,7 +78,7 @@ public class Main {
          -> Collections.sort
         */
 
-        //get list of plants from kvetinyOutput
+        // ---> get list of plants from kvetinyOutput
         List<Plant> plantsList = kvetinyOutput.getPlantsList();
 
         //sort the list of plants by name
@@ -88,7 +88,6 @@ public class Main {
         //sort the list of plants by day of watering
         Collections.sort(plantsList, Comparator.comparing(Plant::getWatering));
         System.out.println("\n list of plants sorted by the last day of watering: " + plantsList + "\n");
-
 
     }
 }
